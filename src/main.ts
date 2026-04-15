@@ -52,8 +52,8 @@ async function bootstrap(): Promise<NestExpressApplication> {
   return nestApp;
 }
 
-// Vercel serverless handler — exported as default
-export default async (req: IncomingMessage, res: ServerResponse): Promise<void> => {
+// Serverless handler — export = compiles to module.exports = fn (required by @vercel/node)
+const serverlessHandler = async (req: IncomingMessage, res: ServerResponse): Promise<void> => {
   await bootstrap();
   expressApp(req as any, res as any);
 };
@@ -67,3 +67,5 @@ if (!process.env.VERCEL) {
     }),
   );
 }
+
+export = serverlessHandler;
