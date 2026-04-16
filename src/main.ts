@@ -46,6 +46,11 @@ async function bootstrap(): Promise<NestExpressApplication> {
   const document = SwaggerModule.createDocument(nestApp, swaggerConfig);
   SwaggerModule.setup('docs', nestApp, document, {
     swaggerOptions: { persistAuthorization: true },
+    customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.17.14/swagger-ui.min.css',
+    customJs: [
+      'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.17.14/swagger-ui-bundle.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.17.14/swagger-ui-standalone-preset.min.js',
+    ],
   });
 
   await nestApp.init();
