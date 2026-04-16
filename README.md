@@ -2,6 +2,8 @@
 
 E-commerce REST API built as a senior-level NestJS portfolio project, deployed serverlessly on Vercel.
 
+**Live demo:** [https://nexus-api-opal.vercel.app/docs](https://nexus-api-opal.vercel.app/docs)
+
 ## Preview
 
 ![Swagger UI](./screenshots/Screenshot%202026-04-15%20164338.png)
